@@ -31,7 +31,7 @@ const SignUpForm = () => {
         country: "",
       }}
       onSubmit={async (values, actions) => {
-        await axios.post("http://localhost:3001/api/user/signup", values);
+        // await axios.post("http://localhost:3001/api/user/signup", values);
         actions.resetForm();
         actions.setSubmitting(false);
       }}
