@@ -7,7 +7,7 @@ const Auth = () => {
   const [signIn, setSignIn] = useState(true);
   return (
     <>
-      <Center marginTop={40}>
+      <Center marginY={20}>
         <Container>
           <Heading textAlign={"left"} marginBottom={8}>
             {signIn ? "Sign in" : "Sign up"}
