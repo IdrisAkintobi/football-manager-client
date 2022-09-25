@@ -1,6 +1,3 @@
-import * as Yup from "yup";
-import { Formik, Form, Field } from "formik";
-import axios from "axios";
 import {
   FormControl,
   FormLabel,
@@ -8,6 +5,12 @@ import {
   Input,
   FormErrorMessage,
 } from "@chakra-ui/react";
+import * as Yup from "yup";
+import { Formik, Form, Field } from "formik";
+import { useAppDispatch } from "../../redux/hooks";
+import { setUser } from "../../redux/reducers/user.slice";
+import { useNavigate } from "react-router";
+import { requestFunc, URL } from "../../utils/constants";
 
 const schema = Yup.object().shape({
   email: Yup.string().email("Invalid email").required("Email is required"),
@@ -15,6 +18,8 @@ const schema = Yup.object().shape({
 });
 
 const SignInForm = () => {
+  const dispatch = useAppDispatch();
+  const navigate = useNavigate();
   return (
     <Formik
       validationSchema={schema}
@@ -23,9 +28,24 @@ const SignInForm = () => {
         password: "",
       }}
       onSubmit={async (values, actions) => {
-        console.log("Hello");
-        // await axios.post("http://localhost:3001/api/user/login", values);
-        actions.resetForm();
+        const { data, status } = await requestFunc(
+          "post",
+          URL.SIGN_IN,
+          "",
+          values
+        );
+        if (data) {
+          dispatch(setUser({ ...data.details }));
+          navigate("/dashboard");
+          actions.resetForm();
+        } else {
+          actions.setErrors({
+            email:
+              status === 400
+                ? "Invalid email or password"
+                : "Something went wrong",
+          });
+        }
         actions.setSubmitting(false);
       }}
     >
@@ -59,7 +79,7 @@ const SignInForm = () => {
           </Field>
           <Button
             mt={4}
-            colorScheme="teal"
+            colorScheme="messenger"
             isLoading={props.isSubmitting}
             type="submit"
           >
