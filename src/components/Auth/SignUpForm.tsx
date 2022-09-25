@@ -1,6 +1,5 @@
 import * as Yup from "yup";
 import { Formik, Form, Field } from "formik";
-import axios from "axios";
 import {
   FormControl,
   FormLabel,
@@ -8,6 +7,10 @@ import {
   Input,
   FormErrorMessage,
 } from "@chakra-ui/react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { useAppDispatch } from "../../redux/hooks";
+import { setUser } from "../../redux/reducers/user.slice";
 
 const schema = Yup.object().shape({
   email: Yup.string().email("Invalid email").required("Email is required"),
@@ -20,6 +23,8 @@ const schema = Yup.object().shape({
 });
 
 const SignUpForm = () => {
+  const dispatch = useAppDispatch();
+  const navigate = useNavigate();
   return (
     <Formik
       validationSchema={schema}
@@ -31,8 +36,18 @@ const SignUpForm = () => {
         country: "",
       }}
       onSubmit={async (values, actions) => {
-        // await axios.post("http://localhost:3001/api/user/signup", values);
-        actions.resetForm();
+        try {
+          const response = await axios.post(
+            "http://localhost:3001/api/user/signup",
+            values
+          );
+          const { owner: email, token } = response.data.details;
+          dispatch(setUser({ email, token }));
+          navigate("/dashboard", { replace: true });
+          actions.resetForm();
+        } catch (error) {
+          console.log(error);
+        }
         actions.setSubmitting(false);
       }}
     >
@@ -111,7 +126,7 @@ const SignUpForm = () => {
           </Field>
           <Button
             mt={4}
-            colorScheme="teal"
+            colorScheme="messenger"
             isLoading={props.isSubmitting}
             type="submit"
           >
