@@ -1,9 +1,9 @@
-import { FC, useState } from "react";
 import { Button, Flex, Spinner, useToast } from "@chakra-ui/react";
-import { Player } from "../../utils/type-defs";
-import { requestFunc, URL } from "../../utils/constants";
+import { FC, useState } from "react";
 import { useAppSelector } from "../../redux/hooks";
 import { selectToken } from "../../redux/reducers/user.slice";
+import { requestFunc, URL } from "../../utils/constants";
+import { Player } from "../../utils/type-defs";
 
 const BuyButton: FC<Player> = ({ _id }) => {
   const token = useAppSelector(selectToken);

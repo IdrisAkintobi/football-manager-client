@@ -1,24 +1,24 @@
-import { useRef, FC, useState } from "react";
 import {
   Button,
-  Modal,
-  ModalOverlay,
-  useDisclosure,
-  ModalContent,
-  ModalHeader,
-  ModalCloseButton,
-  ModalBody,
   FormControl,
   FormLabel,
+  Modal,
+  ModalBody,
+  ModalCloseButton,
+  ModalContent,
   ModalFooter,
+  ModalHeader,
+  ModalOverlay,
   Spinner,
+  useDisclosure,
   useToast,
 } from "@chakra-ui/react";
-import { AmountInput } from "../Inputs/Amount";
-import { Player } from "../../utils/type-defs";
-import { requestFunc, URL } from "../../utils/constants";
+import { FC, useRef, useState } from "react";
 import { useAppSelector } from "../../redux/hooks";
 import { selectToken } from "../../redux/reducers/user.slice";
+import { requestFunc, URL } from "../../utils/constants";
+import { Player } from "../../utils/type-defs";
+import { AmountInput } from "../Inputs/Amount";
 
 const SellModal: FC<Player> = ({ _id, firstName, lastName, onSale }) => {
   const token = useAppSelector(selectToken);

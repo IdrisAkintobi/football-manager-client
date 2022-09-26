@@ -1,16 +1,16 @@
 import {
   Box,
   Center,
-  useColorModeValue,
   Heading,
-  Text,
-  Stack,
   Image,
+  Stack,
+  Text,
+  useColorModeValue,
 } from "@chakra-ui/react";
-import { Player } from "../../utils/type-defs";
 import { FC } from "react";
-import SellModal from "../Modal/SellModal";
+import { Player } from "../../utils/type-defs";
 import BuyButton from "../Button/BuyButton";
+import SellModal from "../Modal/SellModal";
 
 const IMAGE = "male.png";
 

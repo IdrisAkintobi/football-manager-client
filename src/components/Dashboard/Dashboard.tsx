@@ -1,13 +1,13 @@
-import { useState, useEffect } from "react";
+import { Center, Heading, Text } from "@chakra-ui/react";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router";
 import { useAppSelector } from "../../redux/hooks";
 import { selectToken } from "../../redux/reducers/user.slice";
-import { useNavigate } from "react-router";
-import { Team } from "../../utils/type-defs";
-import { Center, Heading, Text } from "@chakra-ui/react";
-import ListPlayers from "./ListPlayers";
-import { Loading } from "../Loading/Loading";
 import { requestFunc, URL } from "../../utils/constants";
+import { Team } from "../../utils/type-defs";
+import { Loading } from "../Loading/Loading";
 import Stats from "../Stat/Stats";
+import ListPlayers from "./ListPlayers";
 
 const Dashboard = () => {
   const navigate = useNavigate();

@@ -1,13 +1,13 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Provider } from "react-redux";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { PersistGate } from "redux-persist/integration/react";
 import Auth from "./components/Auth";
 import Dashboard from "./components/Dashboard/Dashboard";
-import Market from "./components/Market/Market";
-import { Provider } from "react-redux";
-import { store, persistor } from "./redux/store";
 import Nav from "./components/Header/Header";
-import { PersistGate } from "redux-persist/integration/react";
 import { Loading } from "./components/Loading/Loading";
+import Market from "./components/Market/Market";
 import Protected from "./components/Protected/Protected";
+import { persistor, store } from "./redux/store";
 
 export const App = () => (
   <Provider store={store}>

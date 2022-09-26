@@ -1,27 +1,31 @@
-import { ReactNode } from "react";
+import { CloseIcon, HamburgerIcon } from "@chakra-ui/icons";
 import {
-  Center,
-  Box,
-  Flex,
   Avatar,
-  HStack,
-  Link,
-  IconButton,
+  Box,
   Button,
+  Center,
+  Flex,
+  HStack,
+  IconButton,
+  Link,
   Menu,
   MenuButton,
-  MenuList,
-  MenuItem,
   MenuDivider,
-  useDisclosure,
-  useColorModeValue,
-  Stack,
+  MenuItem,
+  MenuList,
   Show,
+  Stack,
+  useColorModeValue,
+  useDisclosure,
 } from "@chakra-ui/react";
-import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
+import { ReactNode } from "react";
 import { ColorModeSwitcher } from "../../ColorModeSwitcher";
-import { removeUser, selectToken, selectEmail } from "../../redux/reducers/user.slice";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+import {
+  removeUser,
+  selectEmail,
+  selectToken,
+} from "../../redux/reducers/user.slice";
 import { Soccer } from "../Loading/Loading";
 
 const Links: { [key: string]: string } = {

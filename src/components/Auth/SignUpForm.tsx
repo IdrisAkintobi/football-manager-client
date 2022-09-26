@@ -1,14 +1,14 @@
-import * as Yup from "yup";
-import { Formik, Form, Field } from "formik";
 import {
-  FormControl,
-  FormLabel,
   Button,
-  Input,
+  FormControl,
   FormErrorMessage,
+  FormLabel,
+  Input,
 } from "@chakra-ui/react";
 import axios from "axios";
+import { Field, Form, Formik } from "formik";
 import { useNavigate } from "react-router-dom";
+import * as Yup from "yup";
 import { useAppDispatch } from "../../redux/hooks";
 import { setUser } from "../../redux/reducers/user.slice";
 

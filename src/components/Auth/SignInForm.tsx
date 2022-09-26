@@ -1,15 +1,15 @@
 import {
-  FormControl,
-  FormLabel,
   Button,
-  Input,
+  FormControl,
   FormErrorMessage,
+  FormLabel,
+  Input,
 } from "@chakra-ui/react";
+import { Field, Form, Formik } from "formik";
+import { useNavigate } from "react-router";
 import * as Yup from "yup";
-import { Formik, Form, Field } from "formik";
 import { useAppDispatch } from "../../redux/hooks";
 import { setUser } from "../../redux/reducers/user.slice";
-import { useNavigate } from "react-router";
 import { requestFunc, URL } from "../../utils/constants";
 
 const schema = Yup.object().shape({

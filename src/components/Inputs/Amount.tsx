@@ -1,15 +1,15 @@
-import { FC, Dispatch } from "react";
 import {
+  NumberDecrementStepper,
+  NumberIncrementStepper,
   NumberInput,
   NumberInputField,
   NumberInputStepper,
-  NumberIncrementStepper,
-  NumberDecrementStepper,
 } from "@chakra-ui/react";
+import { Dispatch, FC } from "react";
 
 interface PropType {
   value: string;
-  setValue: Dispatch<React.SetStateAction<string>>
+  setValue: Dispatch<React.SetStateAction<string>>;
 }
 
 export const AmountInput: FC<PropType> = ({ value, setValue }) => {

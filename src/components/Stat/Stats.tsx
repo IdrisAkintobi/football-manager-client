@@ -1,10 +1,10 @@
 import {
+  Flex,
   Stat,
-  StatLabel,
-  StatNumber,
   StatArrow,
   StatGroup,
-  Flex,
+  StatLabel,
+  StatNumber,
 } from "@chakra-ui/react";
 interface propType {
   budget: number;

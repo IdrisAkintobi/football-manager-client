@@ -1,5 +1,4 @@
-import { Spinner } from "@chakra-ui/react";
-import { Center } from "@chakra-ui/react";
+import { Center, Spinner } from "@chakra-ui/react";
 
 const Soccer = (
   <img

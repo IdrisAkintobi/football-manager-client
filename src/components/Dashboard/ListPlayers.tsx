@@ -1,6 +1,6 @@
-import PlayerCard from "../Card/PlayerCard";
-import { Flex, Center } from "@chakra-ui/react";
+import { Center, Flex } from "@chakra-ui/react";
 import { Player } from "../../utils/type-defs";
+import PlayerCard from "../Card/PlayerCard";
 
 interface propType {
   players: Player[];

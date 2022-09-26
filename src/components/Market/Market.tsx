@@ -1,11 +1,11 @@
-import { useState, useEffect } from "react";
+import { Center, Heading } from "@chakra-ui/react";
+import { useEffect, useState } from "react";
 import { useAppSelector } from "../../redux/hooks";
 import { selectToken } from "../../redux/reducers/user.slice";
+import { requestFunc, URL } from "../../utils/constants";
 import { Player } from "../../utils/type-defs";
-import { Center, Heading } from "@chakra-ui/react";
 import ListPlayers from "../Dashboard/ListPlayers";
 import { Loading } from "../Loading/Loading";
-import { requestFunc, URL } from "../../utils/constants";
 
 const Market = () => {
   const token = useAppSelector(selectToken);

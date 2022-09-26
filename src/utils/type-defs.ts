@@ -6,7 +6,7 @@ interface Player {
   value: number;
   country: string;
   onSale: boolean;
-  price?: number,
+  price?: number;
   _id: string;
 }
 

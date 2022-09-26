@@ -1,10 +1,10 @@
-import { Center, Container, Heading, Button } from "@chakra-ui/react";
+import { Button, Center, Container, Heading } from "@chakra-ui/react";
 import { useState } from "react";
 import { Navigate } from "react-router";
-import SignUpForm from "./SignUpForm";
-import SignInForm from "./SignInForm";
 import { useAppSelector } from "../../redux/hooks";
 import { selectToken } from "../../redux/reducers/user.slice";
+import SignInForm from "./SignInForm";
+import SignUpForm from "./SignUpForm";
 
 const Auth = () => {
   const isLoggedIn = useAppSelector(selectToken);
