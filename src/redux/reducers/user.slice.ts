@@ -22,11 +22,7 @@ export const userSlice = createSlice({
         ...action.payload,
       };
     },
-    removeUser: () => {
-      return {
-        ...initialState,
-      };
-    },
+    removeUser: () => ({ ...initialState }),
   },
 });
 
