@@ -47,7 +47,10 @@ const SellModal: FC<Player> = ({ _id, firstName, lastName, onSale }) => {
       }
     } else {
       if (!toast.isActive(toastID)) {
-        toast({ description: `${error.message}`, status: "error" });
+        const msg = error.message.includes("field has to be unique")
+          ? "Player already on sale"
+          : error.message;
+        toast({ description: `${msg}`, status: "error" });
       }
     }
     setLoading(false);

@@ -1,51 +1,32 @@
-import axios from "axios";
+import axios, { Method } from "axios";
 
 const baseUrl = "http://localhost:3001/api";
 export const URL = {
-  GET_TEAM: `${baseUrl}/user/view/team`,
-  SIGN_IN: `${baseUrl}/user/login`,
-  SELL: `${baseUrl}/transfer/post`,
-  MARKET: `${baseUrl}/transfer/list`,
-  BUY: `${baseUrl}/transfer/buy`,
-  DEL: `${baseUrl}/transfer/delete`,
+  GET_TEAM: "/user/view/team",
+  SIGN_IN: "/user/login",
+  SELL: "/transfer/post",
+  MARKET: "/transfer/list",
+  BUY: "/transfer/buy",
+  DEL: "/transfer/delete",
 };
 
+axios.defaults.baseURL = baseUrl;
+
 export const requestFunc = async <T>(
-  method: "get" | "post" | "delete",
+  method: Method,
   url: string,
   token: string,
   values?: T
 ) => {
   try {
-    let response: any;
-    switch (method) {
-      case "get":
-        response = await axios.get(url, {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        });
-        break;
-      case "post":
-        response = await axios.post(
-          url,
-          { ...values },
-          {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          }
-        );
-        break;
-      case "delete":
-        response = await axios.delete(url, {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        });
-        break;
-    }
-    const { data } = response;
+    const { data } = await axios.request({
+      method,
+      url,
+      data: { ...values },
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
     return { data };
   } catch (error: any) {
     const { status, data } = error.response;

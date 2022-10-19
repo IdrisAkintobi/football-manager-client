@@ -1,59 +1,62 @@
-This project was bootstrapped with
-[Create React App](https://github.com/facebook/create-react-app).
+<h1 align="center">Football Manager App client</h1>
 
-## Available Scripts
+# Prerequisites
 
-In the project directory, you can run:
+- [NodeJS](https://nodejs.org/en/) (use nvm to manage versions)
+- [NPM](https://www.npmjs.com/get-npm)
+- [Yarn](https://classic.yarnpkg.com/en/docs/install)
 
-### `yarn start`
+## Editor Setup
 
-Runs the app in the development mode.<br /> Open
-[http://localhost:3000](http://localhost:3000) to view it in the browser.
+- [ESLint/Prettier](https://eslint.org/docs/user-guide/integrations#editors)
 
-The page will reload if you make edits.<br /> You will also see any lint errors
-in the console.
+# Instructions
 
-### `yarn test`
+## Description
 
-Launches the test runner in the interactive watch mode.<br /> See the section
-about
-[running tests](https://facebook.github.io/create-react-app/docs/running-tests)
-for more information.
+Frontend for the Football Manager App. This is a React app that uses Redux for state management.
 
-### `yarn build`
+## Installation
 
-Builds the app for production to the `build` folder.<br /> It correctly bundles
-React in production mode and optimizes the build for the best performance.
+1. Clone the repo
+2. Install dependencies with `yarn install`
+3. Start the app with `yarn start`
 
-The build is minified and the filenames include the hashes.<br /> Your app is
-ready to be deployed!
+## Testing
 
-See the section about
-[deployment](https://facebook.github.io/create-react-app/docs/deployment) for
-more information.
+1. Run `yarn test` to run the tests
 
-### `yarn eject`
+## Deployment
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+1. Run `yarn build` to build the app for production
+2. Run `yarn deploy` to deploy the app to the `gh-pages` branch
 
-If you aren’t satisfied with the build tool and configuration choices, you can
-`eject` at any time. This command will remove the single build dependency from
-your project.
+## Contributing
 
-Instead, it will copy all the configuration files and the transitive
-dependencies (webpack, Babel, ESLint, etc) right into your project so you have
-full control over them. All of the commands except `eject` will still work, but
-they will point to the copied scripts so you can tweak them. At this point
-you’re on your own.
+1. Fork the repo
+2. Create your feature branch (`git checkout -b feature/fooBar`)
+3. Commit your changes (`git commit -am 'Add some fooBar'`)
+4. Push to the branch (`git push origin feature/fooBar`)
+5. Create a new Pull Request
 
-You don’t have to ever use `eject`. The curated feature set is suitable for
-small and middle deployments, and you shouldn’t feel obligated to use this
-feature. However we understand that this tool wouldn’t be useful if you couldn’t
-customize it when you are ready for it.
+## Contact
 
-## Learn More
+- [LinkedIn](https://www.linkedin.com/in/idrisakintobi/)
+- [Email](mailto:akintobiidris@gmail.com)
 
-You can learn more in the
-[Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Acknowledgements
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- [React](https://reactjs.org/)
+- [Redux](https://redux.js.org/)
+- [React Router](https://reactrouter.com/)
+- [React Redux](https://react-redux.js.org/)
+- [Chakra UI](https://chakra-ui.com/)
+- [React Icons](https://react-icons.github.io/react-icons/)
+- [React Testing Library](https://testing-library.com/docs/react-testing-library/intro)
+- [ESLint](https://eslint.org/)
+- [Prettier](https://prettier.io/)
+- [Jest](https://jestjs.io/)
+
+## 📝 License
+
+This project is [MIT](https://opensource.org/licenses/MIT) licensed.
